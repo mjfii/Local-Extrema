@@ -1,4 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 readme.md
+readme.Rmd
 ^build$
+workspace.R
+^images$

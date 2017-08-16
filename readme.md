@@ -13,7 +13,7 @@ The library contains two primary (usable) functions and a single set of demo dat
 3. `slv`: This is the preloaded demo data based on 100 days of stock ticker "SLV", the actual time frame is irrelevant.
 
 ## Motivation
-Too many times there was a need to determine peaks and valleys when working with time-series data.  There were a couple libraries out there that did some, but not all of the work, and they were cumbersome to use.  This library works with simple vector inputs, and derives simple usable objects it integrate.
+Too many times there was a need to determine peaks and valleys when working with time-series data.  There were a couple libraries out there that did some, but not all of the work, and they were cumbersome to use.  Alternately, there were some libraries that tried to smooth the data in a way that never truly isolated a true extrema from the input vector.  This library works with simple vector inputs, and derives simple usable objects it integrate.
 
 ## Prerequisites
 The library requires only one additional package, `ggplot2`, which is installed when this library is loaded.  While the package is not necessary to calculate the local extrema, it generates a plot that can be generated is quite helpful in understanding the data.
@@ -36,12 +36,21 @@ slv[1:25]
 ```
 
 To calculate:
-
 ```r
 x <- extrema(slv, 3)
-x
+print(x)
 ```
-
+```
+class : local.extrema
+interval :  int 3
+maxima :  int [1:6] 2 22 26 33 69 85
+minima :  int [1:8] 11 23 30 50 57 66 80 91
+results : 'data.frame':	100 obs. of  4 variables:
+ $ x        : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ y        : num  17.4 17.4 16.8 17 16.8 ...
+ $ is_maxima: logi  FALSE TRUE FALSE FALSE FALSE FALSE ...
+ $ is_minima: logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
+```
 To view the contents of the S3 class:
 ```r
 x$interval
@@ -55,7 +64,7 @@ To plot:
 x <- extrema(slv, 5)
 plot_extrema(x)
 ```
-
+![SLV Ticker with an interval of 5](https://raw.githubusercontent.com/mjfii/Local-Extrema/master/images/slv_i5.png)
 ## Contributors
 
 Michael Flanigan  

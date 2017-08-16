@@ -1,0 +1,14 @@
+Package: local.extrema
+Title: Calculate and Visualize Local Extrema
+Version: 0.0.1.9000
+Authors@R: person("Michael", "Flanigan", email = "mick.flanigan@gmail.com", role = c("aut", "cre"))
+Description: This package derives local minima and maxima based on a numeric vector and an interval period.  The 
+   primary result provide these oridinal vectors and a complete data frame with xy coordinates.  Also, there is a plotting 
+   function to visualize the extrema, isolate the reversal, and note the percent change from minima and maxima, and vice versa.
+Depends: R (>= 3.3.2)
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+   ggplot2
+RoxygenNote: 6.0.1
